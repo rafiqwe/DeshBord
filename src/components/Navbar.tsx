@@ -21,7 +21,7 @@ const Navbar = () => {
     const { setTheme } = useTheme()
 
   return (
-    <nav className='p-4 flex justify-between items-center'>
+    <nav className='p-4 flex justify-between items-center sticky top-0 bg-background z-10'>
         {/* Left side */}
         <SidebarTrigger/>
         {/* Right side  */}
@@ -59,9 +59,11 @@ const Navbar = () => {
                 <DropdownMenuContent sideOffset={10} >
                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem >
-                        <User/>
-                         Profile
+                    <DropdownMenuItem asChild >
+                        <Link href={"/users/muhammadrabbi"}>
+                            <User/>
+                            Profile
+                         </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem ><Settings/> Settings</DropdownMenuItem>
                     <DropdownMenuItem variant="destructive"><LogOut/> Logout</DropdownMenuItem>
