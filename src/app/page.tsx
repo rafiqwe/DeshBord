@@ -1,26 +1,21 @@
 "use client"
 
-import { Button } from "@/components/ui/button";
-import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@/components/ui/input-otp";
+import { AppAreaCharts } from "@/components/AppAreaCharts";
+import AppBarCharts from "@/components/AppBarCharts";
+import { AppPieCharts } from "@/components/AppPieCharts";
+import CardList from "@/components/CardList";
+import TodoList from "@/components/TodoList";
+
 
 export default function Home() {
   return (
-    <div className="flex h-screen w-full items-center justify-center gap-5 flex-col">
-      <h1 className="text-3xl font-bold capitalize">muhammad rabbi ☠️</h1>
-    <Button variant='destructive' size='lg'> Click Me </Button>
-     <InputOTP maxLength={6}>
-      <InputOTPGroup>
-          <InputOTPSlot index={0} />
-          <InputOTPSlot index={1} />
-          <InputOTPSlot index={2} />
-        </InputOTPGroup>
-        <InputOTPSeparator/>
-        <InputOTPGroup>
-          <InputOTPSlot index={3} />
-          <InputOTPSlot index={4} />
-          <InputOTPSlot index={5} />
-        </InputOTPGroup>
-    </InputOTP>
+    <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-4">
+      <div className="bg-primary-foreground p-4 rounded-lg  lg:col-span-2 xl:col-span-1 2xl:col-span-2"><AppBarCharts/></div>
+      <div className="bg-primary-foreground p-4 rounded-lg"><CardList title="Latest Transactions"/></div>
+      <div className="bg-primary-foreground p-4 rounded-lg"><AppPieCharts/></div>
+       <div className="bg-primary-foreground p-4 rounded-lg"><TodoList/></div>
+      <div className="bg-primary-foreground p-4 rounded-lg lg:col-span-2 xl:col-span-1 2xl:col-span-2"><AppAreaCharts/></div>
+      <div className="bg-primary-foreground p-4 rounded-lg"><CardList title="Popular Content"/></div>
     </div>
   );
 }
