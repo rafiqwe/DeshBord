@@ -1,4 +1,4 @@
-import { Home, Inbox, Calendar, Search, Settings, User2, ChevronUp, User, Plus, Projector } from "lucide-react"; // or from your icon library
+import { Home, Inbox, Calendar, Search, Settings, User2, ChevronUp, User, Plus, Projector, Users } from "lucide-react"; // or from your icon library
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarSeparator } from "./ui/sidebar";
 import Link from "next/link";
 import Image from "next/image";
@@ -13,22 +13,27 @@ const items = [
   },
   {
     title: "Inbox",
-    url: "/inbox",
+    url: "/#",
     icon: Inbox,
   },
   {
+    title: "Users",
+    url: "/users",
+    icon: Users,
+  },
+  {
     title: "Calendar",
-    url: "/calendar",
+    url: "/#",
     icon: Calendar,
   },
   {
     title: "Search",
-    url: "/search",
+    url: "/#",
     icon: Search,
   },
   {
     title: "Settings",
-    url: "/settings",
+    url: "/#",
     icon: Settings,
   },
 ];
@@ -71,25 +76,25 @@ const AppSide = () => {
                 </SidebarGroupContent>
             </SidebarGroup>
             <SidebarGroup>
-              <SidebarGroupLabel>Projects</SidebarGroupLabel>
+              <SidebarGroupLabel>Payment</SidebarGroupLabel>
               <SidebarGroupAction>
-                <Plus/> <span className="sr-only">Add Project</span>
+                <Plus/> <span className="sr-only">Add Payment</span>
               </SidebarGroupAction>
               <SidebarGroupContent>
                 <SidebarMenu>
                   <SidebarMenuItem>
                     <SidebarMenuButton asChild>
-                      <Link href='/Projects'>
+                      <Link href='/payment'>
                         <Projector/>
-                         <span className="capitalize">See all projects</span>
+                         <span className="capitalize">See all Payment</span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                   <SidebarMenuItem>
                     <SidebarMenuButton asChild>
-                      <Link href='/Projects'>
+                      <Link href='/#'>
                         <Plus/>
-                         <span className="capitalize">Add projects</span>
+                         <span className="capitalize">Add Payment</span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
